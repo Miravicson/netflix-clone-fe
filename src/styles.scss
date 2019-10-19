@@ -1,1 +1,76 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "Bebas nue";
+  src: url("/assets/fonts/BebasNeue.otf") format("otf");
+}
+
+:root {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: #000;
+  margin: 0;
+  font-family: "Bebas nue";
+}
+
+
+.mat-toolbar.header {
+  justify-content: space-between;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  background-color: rgba(30, 30, 30, 0.4);
+  z-index: 1000;
+
+
+  .brand {
+    color: red;
+    font-size: 2rem;
+    font-weight: bold;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    img {
+      height: 50%;
+    }
+  }
+}
+
+
+
+
+
+.hamburger {
+  visibility: hidden !important;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+
+
+
+@media (max-width:1024px) {
+
+  .mat-nav-list .mat-list-item {
+    font-size: 14px;
+  }
+}
+
+@media (max-width:767px) {
+  .nav-tool-items {
+    margin-right: 0;
+  }
+
+  .hamburger {
+    visibility: visible !important;
+  }
+}

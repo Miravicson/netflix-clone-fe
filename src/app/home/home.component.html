@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="list-item__container">
+    <h2 class="title">
+      Movies
+    </h2>
+    <div class="list-items">
+
+      <div class="list-item" *ngFor="let movie of movies">
+        <div class="image">
+          <img src="{{movie?.poster}}" alt="">
+        </div>
+        <div class="list-item__details">
+          <h3>{{movie?.title}}</h3>
+          <span class="rating">Rating</span>
+          <span class="year">{{movie?.year}}</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
