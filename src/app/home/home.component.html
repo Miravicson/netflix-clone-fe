@@ -1,10 +1,10 @@
 <div class="container">
   <div class="list-item__container">
-    <h2 class="title">
-      Movies
+    <h2 class="title" (click)="setTabIndex(0)" [ngClass]="{'active': tabIndexMap.movies === currentTabIndex}">Movies
     </h2>
+    <h2 class="title" (click)="setTabIndex(1)" [ngClass]="{'active': tabIndexMap.favorites === currentTabIndex}">
+      Favorites</h2>
     <div class="list-items">
-
       <div class="list-item" *ngFor="let movie of movies">
         <div class="image">
           <img src="{{movie?.poster}}" alt="">

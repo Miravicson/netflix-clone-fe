@@ -1,10 +1,16 @@
-<!-- Toolbar -->
-<mat-toolbar class="header">
+<header>
   <div class="brand">
-    <img src="/assets/images/netflix.png" alt="">
+    <img src="/assets/images/netflix.png" class="big-logo" alt="">
+    <img src="/assets/images/netflix-3.png" class="small-logo" alt="">
   </div>
-</mat-toolbar>
 
+  <div class="menu">
+    <form action="">
+      <input type="text" name="search" id="search">
+      <button>Search</button>
+    </form>
+  </div>
+</header>
 
 <!-- Main content -->
 <router-outlet></router-outlet>

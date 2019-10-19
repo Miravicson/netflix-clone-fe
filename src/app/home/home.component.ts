@@ -1,18 +1,33 @@
-import { FavoritesService } from './../favorites.service';
-import { Component, OnInit } from '@angular/core';
+import { MoviesService } from "./../movies.service";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: "app-home",
+  templateUrl: "./home.component.html",
+  styleUrls: ["./home.component.scss"]
 })
 export class HomeComponent implements OnInit {
   movies;
-  constructor(private favoriteService: FavoritesService) { }
+  currentTabIndex: number = 0;
+  tabIndexMap = {
+    movies: 0,
+    favorites: 1
+  };
+  constructor(private moviesService: MoviesService) {}
 
   ngOnInit() {
-    this.movies = this.favoriteService.getFavorites();
-    console.log(this.movies);
+    this.movies = this.moviesService.getAllMovies();
   }
-
+  fetchMovieByTabIndex(tabIndex) {
+    switch (tabIndex) {
+      case 1:
+        return this.moviesService.getFavorites();
+      default:
+        return this.moviesService.getAllMovies();
+    }
+  }
+  setTabIndex(index) {
+    this.currentTabIndex = index;
+    this.movies = this.fetchMovieByTabIndex(this.currentTabIndex);
+  }
 }
